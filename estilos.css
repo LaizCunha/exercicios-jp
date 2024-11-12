@@ -1,0 +1,17 @@
+body {
+    background-color: #ccc;
+}
+
+#pagina {
+    background-color: white;
+}
+
+#topo {
+    padding: 20px;
+    background-color: lightblue;
+}
+
+#conteudo {
+    /* min-height: 800px; */
+    padding: 40px;
+}
