@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./estilos.css">
     
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./main.js"></script>
 
     <title>Meus Pets</title>
@@ -19,7 +20,13 @@
             <h1 class="text-secondary">Meus Pets! <i class="bi bi-heart-fill text-danger"></i></h1>
         </div>
         <div id="conteudo">
-            <div class="cards-pets">TODO: criar os cards...</div>
+            <div class="cards-pets">TODO: criar os cards...
+                <script>
+                    $(document).ready(function() {
+                        $('.cards-pets').load('card');
+                    }) 
+                </script>
+            </div>
             <hr class="border-2" />
             <button class="btn btn-primary btn-outline"><i class="bi bi-plus me-1"></i>Cadastrar Novo</button>
         </div>
