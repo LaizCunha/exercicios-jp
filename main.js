@@ -37,16 +37,29 @@ $(document).ready(function() {
         }
     ];
 
-    listaPets.forEach(function(pet) {
-        var card = `
-        <div class="card ${pet.coloracao.toLocaleLowerCase()}" style="width: 18rem;">
-          <img src="/imgs/${pet.nome}.jpg" class="card-img-top" alt="...">
-            <div class="card-body pet-color" >
-                <h5 class="card-title">${pet.nome}</h5>
-                <p class="pet-info">Espécie: ${pet.especie}, Cor: ${pet.coloracao}, ${pet.pesoKg}kgs Castrado: ${pet.castrado ?  'Sim' : 'Não'}</p>
-            </div>
-        </div>
-        `;
-        $('.cards-pets').append(card);
-    })
-})
+    
+    listaPets.forEach(pets => {
+        var card = $("<div>").addClass("card");
+        var cardHead = $("<div>").addClass("card-head");
+        var cardBody = $("<div>").addClass("card-body");
+        
+        cardHead.append(`
+            <img src="/imgs/${pets.nome}.jpg" alt"Foto de ${pets.nome}">
+            <p>${pets.nome}</p>
+            `);
+        cardBody.append(`
+            <p>Espécie: ${pets.especie}</p>
+            <p>Coloração: ${pets.coloracao}</p>
+            <p>Peso: ${pets.pesoKg}kg</p>
+            <p>Castrado: ${pets.castrado ? "Sim" : "Não"}</p>
+            `)        
+        
+        card.append(cardHead);
+        card.append(cardBody);
+        
+        $(".cards").append(card);
+
+
+        });
+
+});
