@@ -41,6 +41,7 @@ $(document).ready(function() {
     var card = $("<div>").addClass("card");
     var cardHead = $("<div>").addClass("card-head");
     var cardBody = $("<div>").addClass("card-body");
+    var tema = pet.coloracao.toLocaleLowerCase();
         
     cardHead.append(`
       <img src="/imgs/${pet.nome}.jpg" alt"Foto de ${pet.nome}">
@@ -55,6 +56,7 @@ $(document).ready(function() {
         
     card.append(cardHead);
     card.append(cardBody);
+    card.addClass(tema);
         
     $(".cards").append(card);
         

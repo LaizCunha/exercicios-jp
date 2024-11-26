@@ -28,16 +28,15 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 16px); /* Ajusta para caber 3 cartões por linha */
-    min-width: 250px; /* Tamanho mínimo do cartão */
-    max-width: 300px; /* Tamanho máximo do cartão */
+    width: calc(33.333% - 16px); 
+    min-width: 250px; 
+    max-width: 300px; 
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 .card-head {
     padding: 8px;
-    background-color: #e0e0e0;
     text-align: center;
 }
 .card-head p{
