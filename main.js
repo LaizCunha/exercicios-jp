@@ -1,16 +1,68 @@
 $(document).ready(function() {
-    const listaPets = [];
 
-    listaPets.forEach(function(pet) {
-        var card = `
-        <div class="card ${pet.coloracao.toLocaleLowerCase()}" style="width: 18rem;">
-          <img src="/imgs/${pet.nome}.jpg" class="card-img-top" alt="...">
-            <div class="card-body pet-color" >
-                <h5 class="card-title">${pet.nome}</h5>
-                <p class="pet-info">Espécie: ${pet.especie}, Cor: ${pet.coloracao}, ${pet.pesoKg}kgs Castrado: ${pet.castrado ?  'Sim' : 'Não'}</p>
-            </div>
-        </div>
-        `;
-        $('.cards-pets').append(card);
-    })
-})
+  const listaPets = [
+    {
+      nome: 'Chantilly',
+      especie: 'Gato',
+      coloracao: 'Tricolor',
+      pesoKg: 7.8,
+      castrado: true
+    },
+    {
+      nome: 'Cheetos',
+      especie: 'Gato',
+      coloracao: 'Laranja',
+      pesoKg: 5.2,
+      castrado: false
+    },
+    {
+      nome: 'Malu',
+      especie: 'Cachorro',
+      coloracao: 'Preto',
+      pesoKg: 13,
+      castrado: true
+    },
+    {
+      nome: 'AL',
+      especie: 'Cachorro',
+      coloracao: 'Caramelo',
+      pesoKg: 20,
+      castrado: true
+    },
+    {
+      nome: 'Hantaro',
+      especie: 'Hamster',
+      coloracao: 'Branco',
+      pesoKg: 0.3,
+      castrado: false
+    }
+  ];
+
+  // TODO: preencher array de pets partindo de requisição para fake api
+  // const listaPets = [];
+
+  for (const pet of listaPets) {
+    var card = $("<div>").addClass("card");
+    var cardHead = $("<div>").addClass("card-head");
+    var cardBody = $("<div>").addClass("card-body");
+    var tema = pet.coloracao.toLocaleLowerCase();
+        
+    cardHead.append(`
+      <img src="/imgs/${pet.nome}.jpg" alt"Foto de ${pet.nome}">
+      <p>${pet.nome}</p>
+    `);
+    cardBody.append(`
+      <p>Espécie: ${pet.especie}</p>
+      <p>Coloração: ${pet.coloracao}</p>
+      <p>Peso: ${pet.pesoKg}kg</p>
+      <p>Castrado: ${pet.castrado ? "Sim" : "Não"}</p>
+    `)        
+        
+    card.append(cardHead);
+    card.append(cardBody);
+    card.addClass(tema);
+        
+    $(".cards").append(card);
+  }
+
+});

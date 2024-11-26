@@ -16,12 +16,48 @@ body {
     padding: 40px;
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: center;
+    padding: 16px;
+}
 .card {
-    margin: 0.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 16px); 
+    min-width: 250px; 
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
-.card-img-top {
-    padding: 1rem
+.card-head {
+    padding: 8px;
+    text-align: center;
 }
+.card-head p{
+    margin-top: 15px; 
+    font-weight: bold;
+}
+.card-head img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.card-body {
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+.card-body p {
+    margin: 4px 0; 
+    line-height: 1.5;
+}
+
 .laranja {
     background: #f79d37;
 }
