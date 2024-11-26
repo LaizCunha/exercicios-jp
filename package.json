@@ -3,5 +3,11 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3"
+  },
+  "scripts": {
+    "start": "json-server --watch db.json"
   }
 }
