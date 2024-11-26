@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   const listaPets = [
     {
       nome: 'Chantilly',
@@ -37,6 +38,9 @@ $(document).ready(function() {
     }
   ];
 
+  // TODO: preencher array de pets partindo de requisição para fake api
+  // const listaPets = [];
+
   for (const pet of listaPets) {
     var card = $("<div>").addClass("card");
     var cardHead = $("<div>").addClass("card-head");
@@ -59,7 +63,6 @@ $(document).ready(function() {
     card.addClass(tema);
         
     $(".cards").append(card);
-        
   }
 
 });
